@@ -1,0 +1,5 @@
+langchain-community
+openai
+langchain_openai
+tavily-python
+streamlit
