@@ -15,7 +15,7 @@ with cols[1]:
 st.markdown("**Hallo Wetterexperte, wie war denn das Wetter in der Schweiz im**")
 season = st.selectbox("", ["Winter", "Spring", "Summer", "Fall"], label_visibility="collapsed")
 year = st.number_input("im Jahr", value=2020, label_visibility="collapsed")
-query = f"Welche signifikanten Wetter Ereignisse gab es im {season} {year} in der Schweiz? Wie ist diese Jahreszeit mit historischen Daten vergleichbar?"
+query = f"Schreibe eine Zusammenfassung zum Wetter im {season} {year} in der Schweiz. War es signifikant anders als in anderen Jahren? Gab es signifikante Ereignisse? Wie ist diese Jahreszeit mit historischen Daten vergleichbar?"
 if st.button("Zusammenfassung"):
     content = client.search(query, search_depth="advanced")["results"]
     prompt = [{
@@ -35,4 +35,4 @@ if st.button("Zusammenfassung"):
     st.markdown(report)
 
 with st.expander("Infos zur Appp"):
-    st.markdown ('Diese App wurde mit [Tavily](https://tavily.com), [OpenAI](https://openai.com), und [langchain_community](https://www.langchain.com/langchain) entwickelt. Das git-repo findest du [hier]()')
+    st.markdown ('Diese App wurde mit [Tavily](https://tavily.com), [OpenAI](https://openai.com), und [🦜langchain_community](https://www.langchain.com/langchain) entwickelt. Das git-repo findest du [hier](https://github.com/lcalmbach/weather-bot)')
